@@ -1,0 +1,12 @@
+{
+  "bail": 1,
+  "verbose": false,
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^/(.*)$": "<rootDir>/src/$1"
+  },
+  "testMatch": ["**/*.(test|spec).(ts|tsx|js|jsx)"]
+}

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.3",
+    "@hot-loader/react-dom": "^16.13.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -10,16 +12,24 @@
     "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "craco-plugin-react-hot-reload": "^0.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-hot-loader": "^4.12.20",
     "react-scripts": "3.4.0",
     "typescript": "^3.8.3"
   },
+  "engines": {
+    "node": ">=10.15.0",
+    "yarn": ">=1.16.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "typecheck": "tsc",
+    "typecheck:watch": "tsc -w",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   }
 }

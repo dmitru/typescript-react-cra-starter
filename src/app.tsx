@@ -1,8 +1,10 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./app.css";
+import { hot } from 'react-hot-loader'
 
-function App() {
+import React from 'react'
+import logo from 'logo.svg'
+import 'app.css'
+
+const App: React.FC<{}> = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -10,17 +12,12 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export const AppHotReloadable = hot(module)(App)
