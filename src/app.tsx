@@ -1,23 +1,31 @@
 import { hot } from 'react-hot-loader'
 
 import React from 'react'
-import logo from 'logo.svg'
-import 'app.css'
-import { GlobalStyle, Button } from 'components/button'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from 'theme'
+import 'app.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HomePage } from 'pages/home'
+import { PageOne } from 'pages/page-one'
+import { PageTwo } from 'pages/page-two'
 
 const App: React.FC<{}> = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <GlobalStyle />
-          <Button>Themed Button</Button>
-        </header>
-      </div>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={defaultTheme}>
+        <Switch>
+          <Route path="/page-2" strict>
+            <PageTwo />
+          </Route>
+          <Route path="/page-1" strict>
+            <PageOne />
+          </Route>
+          <Route path="/" strict>
+            <HomePage />
+          </Route>
+        </Switch>
+      </ThemeProvider>
+    </Router>
   )
 }
 
